@@ -151,14 +151,15 @@ function _draw()
     if gamestates == "mainmenu" then
         shakescreen()
 
-        spr(84,37,50,2,2)
+        spr(84,37,40,2,2)
 
-        print("roots",55, 50,7)
-        print("need",55, 56,7)
-        print("control.",55, 62,7)
+        print("roots",55, 40,7)
+        print("need",55, 46,7)
+        print("control.",55, 52,7)
 
-        print("global game jam 2023", 25,78,3)
-        print("press ❎ to start!",27, 87,7)
+        print("press ❎ to start!",27, 75,7)
+        
+        print("global game jam 2023", 23,103,3)
         print("skagogames. made in skago.",13,110,3)
 
     elseif gamestates == "ingame" then
@@ -179,7 +180,7 @@ function _draw()
     elseif gamestates == "gameover" then
 
         shakescreen()
-        
+
         spr(128,45,30,5,4)
         
         print("game ended!",45,63,7)
@@ -194,8 +195,12 @@ function _draw()
         draw_intro()
     elseif gamestates == "ready" then
         shakescreen()
+
         print("get ready! controller!",20, 30, rnd(16))
         print("player life : ".._life,34,42,8)
+
+        print("🅾️+⬅️➡️: moveright rootman",12,60,10)
+        print("❎: downgrade root",12,67,10)
 
         print("daejeon is u :)", 34, 90, 11)
     end

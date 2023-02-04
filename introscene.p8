@@ -29,9 +29,9 @@ function update_intro()
 
         intro_text.x -= intro_dt * 60
 
-        if intro_text.x <= 42 then
+        if intro_text.x <= 43 then
             intro_logo.nextscene-=intro_dt *  3
-            intro_text.x = 42
+            intro_text.x = 43
         end
     end
 
@@ -41,8 +41,8 @@ function draw_intro()
     spr(intro_logo.ispr, intro_logo.x, intro_logo.y, 2,2)
     print(intro_text.itext, intro_text.x, intro_text.y, 7)
 
-    if intro_text.x <= 42 then
-        print("made in skago.", 35, 110, 1)
+    if intro_text.x <= 43 then
+        print("made in skago.", 35, 110, 7)
     end
 end
 
