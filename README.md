@@ -1,3 +1,5 @@
+<img src="rootneedcontrol_logo.png" alt="My Image">
+
 # Root Need Control
 ### Global Game Jam 2023 Daejeon
 
