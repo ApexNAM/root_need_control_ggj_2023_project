@@ -48,6 +48,7 @@ end
 
 function iswaitended()
     if intro_logo.nextscene <= 0 then
+        set_offset(0.5)
         return true
     end
 

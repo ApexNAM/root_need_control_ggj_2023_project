@@ -16,6 +16,7 @@ __lua__
 #include raindowner.p8
 #include uiux.p8
 #include introscene.p8
+#include camerashake.p8
 
 local player = playercontroller.new()
 local root = rootobject.new()
@@ -41,8 +42,9 @@ end
 
 function _update60()
     if gamestates == "mainmenu" then
-
+        
         if btnp(❎) then
+            
             gamestates = "ready"
         end
     elseif gamestates == "ingame" then
@@ -85,6 +87,7 @@ function _update60()
 
             for rd in all(rain_downer) do
                 if player.oncollisionother(rd,root, rain_downer) then
+                    set_offset(0.5)
                     sfx(2)
                 end
             end 
@@ -100,9 +103,12 @@ function _update60()
         end
 
         if player.isdead and _life == 0 then
+            set_offset(2)
             gamestates = "gameover"
         elseif player.isdead and _life > 0 then
             _life-=1
+            
+            set_offset(0.5)
 
             gamestates="ready"
 
@@ -143,6 +149,7 @@ function _draw()
     cls()
 
     if gamestates == "mainmenu" then
+        shakescreen()
 
         spr(84,37,50,2,2)
 
@@ -160,6 +167,8 @@ function _draw()
         city.draw()
         root.draw(player)
         connect.draw()
+
+        shakescreen()
         
         draw_all_rainpower()
         draw_all_raindowner()
@@ -168,6 +177,9 @@ function _draw()
         draw_ui_roots(root.ridx, player)
 
     elseif gamestates == "gameover" then
+
+        shakescreen()
+        
         spr(128,45,30,5,4)
         
         print("game ended!",45,63,7)
@@ -181,6 +193,7 @@ function _draw()
     elseif gamestates == "intro" then
         draw_intro()
     elseif gamestates == "ready" then
+        shakescreen()
         print("get ready! controller!",20, 30, rnd(16))
         print("player life : ".._life,34,42,8)
 
