@@ -5,7 +5,7 @@ __lua__
 rain_downer = {}
 rain_downer_x = flr(rnd(127)) + 1
 
-rain_downer_speed = {1,2,3,4,5}
+rain_downer_speed = { 0.5, 1 , 1.5 , 2 ,2.5 }
 rain_downer_speed_index = 1
 
 function addraindowner()
@@ -42,7 +42,7 @@ function update_raindowner(r)
         if r.setactive then
             r.y+=r.speed
 
-            if r.y >= 127 then
+            if r.y >= 65 then
 
                 rain_downer_speed_index=flr(rnd(5)) + 1
                 del(rain_downer,r)

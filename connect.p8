@@ -9,7 +9,7 @@ function collisionliner.new()
     local collliner = 
     {
         x = rnd(126),
-        y = 100,
+        y = 62,
         setactive = true,
         speed = 1,
         coll_color = 7,
@@ -72,7 +72,7 @@ function collisionliner.new()
 
     function collliner.returnback()
         collliner.x = rnd(126)
-        collliner.y = 100
+        collliner.y = 62
         collliner.setactive = true
         collliner.speed = 1
         collliner.coll_color = 7

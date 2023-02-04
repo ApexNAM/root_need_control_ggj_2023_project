@@ -9,7 +9,7 @@ function rootobject.new()
     local root = 
     {
         x = {0,-7,-8,-12,-10},
-        y = {101,93,85,60,45},
+        y = 72,
         w = {1,3,3,4,8},
         h = {1,2,3,6,8},
         rspr = {48,33,20,7,11},
@@ -68,7 +68,7 @@ function rootobject.new()
         if not player.isdead then
             if root.ridx > 1 or root.ridx < 5 then
                 spr(root.rspr[root.ridx], player.x + root.x[root.ridx], 
-                root.y[root.ridx],root.w[root.ridx],root.h[root.ridx])
+                root.y,root.w[root.ridx],root.h[root.ridx], false, true )
             end
         end
     end

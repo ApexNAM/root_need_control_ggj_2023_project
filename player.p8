@@ -9,7 +9,7 @@ function playercontroller.new()
     local playerobject = {
         pspr = 1,
         x = 50,
-        y = 110,
+        y = 65,
         isright = true,
         isdead  = false,
         speed = 0.25
@@ -35,8 +35,7 @@ function playercontroller.new()
     end
 
     function playerobject.draw()
-        line(0,109,127,109,8)
-        rectfill(0,60,127,70,1)
+        rectfill(0,70,127,127,1)
 
         if not playerobject.isdead then
             spr(playerobject.pspr, playerobject.x, playerobject.y)

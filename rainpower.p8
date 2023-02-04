@@ -8,7 +8,7 @@ function addrainpower()
     add(rain_power, 
         {
             x = flr(rnd(127)) + 1,
-            y = 0, 
+            y = -10, 
             rspr = 68,
             speed = rnd(0.25) + 0.1,
             setactive = false,
@@ -25,7 +25,7 @@ function update_rainpower(r)
         if r.setactive then
             r.y+=r.speed
 
-            if r.y >= 127 then
+            if r.y >= 65 then
                 del(rain_power,r)
             end
         end
