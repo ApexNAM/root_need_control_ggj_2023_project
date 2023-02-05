@@ -1,10 +1,14 @@
-<img src="rootneedcontrol_logo.png" alt="My Image">
+<img src="rootneedcontrol_logo.png" alt="My Image"> </img>
 
 # Roots Need Control.
-## Global Game Jam 2023 Daejeon
 
-roots need control은 바깥뿌리가 달린 괴생명체의 균형을 지키기 위해 \
+## Game Info?
+roots need control은 뿌리가 달린 괴생명체의 균형을 지키기 위해 \
 괴생명체의 뿌리 길이의 균형을 지켜야하는 아케이드 게임입니다. 
+
+뿌리가 길거나 없어지면 괴생명체는 죽습니다!!
+
+## Why make this game?
 
 2023년 2월 3일부터 2월 5일까지 진행된 <b>글로벌 게임잼 2023</b>에서 참여를 통해 개발을 시작하여, \
 게임잼 주제인 <b>ROOTS</b> 를 기반으로 의도 및 제작되었습니다.
@@ -18,4 +22,7 @@ roots need control은 바깥뿌리가 달린 괴생명체의 균형을 지키기
 
 본 프로젝트는 게임잼 활동으로부터 제작되었습니다.\
 소스코드는 공개용이지만 참고 및 응용은 권장하지 않습니다.
+
+<h5> Global Game Jam 2023 (Daejeon, South Korea) </h5>
+<h5> SkagoGames 2023. made in Skago. </h5>
 
