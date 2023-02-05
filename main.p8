@@ -17,6 +17,7 @@ __lua__
 #include uiux.p8
 #include introscene.p8
 #include camerashake.p8
+#include starforward.p8
 
 local player = playercontroller.new()
 local root = rootobject.new()
@@ -38,6 +39,8 @@ function _init()
 
     addrainpower()
     addraindowner_x(rain_downer_x)
+
+    sf.generate()
 end
 
 function _update60()
@@ -106,6 +109,7 @@ function _update60()
             set_offset(2)
             gamestates = "gameover"
         elseif player.isdead and _life > 0 then
+            dangerlevel = 1
             _life-=1
             
             set_offset(0.5)
@@ -163,6 +167,8 @@ function _draw()
         print("skagogames. made in skago.",13,110,3)
 
     elseif gamestates == "ingame" then
+
+        sf.update()
 
         player.draw()
         city.draw()
