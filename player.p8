@@ -21,14 +21,14 @@ function playercontroller.new()
             if playerobject.isright then
                 playerobject.x+=playerobject.speed
 
-                if playerobject.x >= 127 then
+                if playerobject.x >= 118 then
                     sfx(6)
                     playerobject.isdead = true
                 end
             else
                 playerobject.x-=playerobject.speed
 
-                if playerobject.x <= 0 then
+                if playerobject.x <= 2 then
                     sfx(6)
                     playerobject.isdead = true
                 end

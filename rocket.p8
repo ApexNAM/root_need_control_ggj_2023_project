@@ -22,9 +22,9 @@ end
 function rocket_init()
     for r in all(rocket) do 
         if r.direction == "right" then
-            r.x = -1
+            r.x = 2
         elseif r.direction == "left" then
-            r.x = 130
+            r.x = 118
         end
     end
 end
@@ -34,16 +34,16 @@ function rocket_update(r)
         r.rocket_spr = 97
         r.x+=r.speed
 
-        if r.x >= 130 then
-            del(rocket,r)
+        if r.x >= 118 then
+            r.direction = "left"
         end
 
     elseif r.direction == "left" then -- left
         r.rocket_spr = 96
         r.x-=r.speed
 
-        if r.x <= 0 then
-            del(rocket,r)
+        if r.x <= 2 then
+            r.direction = "right"
         end
     end
 end
