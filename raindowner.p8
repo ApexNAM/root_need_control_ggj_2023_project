@@ -37,7 +37,7 @@ function update_raindowner(r)
 
     if r.y >= 65 then
 
-        rain_downer_speed_index=flr(rnd(5)) + 1
+        rain_downer_speed_index=flr(rnd(2)) + 1
         del(rain_downer,r)
     end
 end
