@@ -11,31 +11,21 @@ function addrainpower()
             y = -10, 
             rspr = 68,
             speed = rnd(0.25) + 0.1,
-            setactive = false,
             objtag = "bullet"
         }
     )
 end
 
 function update_rainpower(r)
-    for r in all(rain_power) do
+    r.y+=r.speed
 
-        rain_power[rnd(all(rain_power)) + 1].setactive = true
-
-        if r.setactive then
-            r.y+=r.speed
-
-            if r.y >= 65 then
-                del(rain_power,r)
-            end
-        end
-    end 
+    if r.y >= 65 then
+        del(rain_power,r)
+    end
 end
 
 function draw_rainpower(r)
-    if r.setactive then
-        spr(r.rspr,r.x,r.y)
-    end
+    spr(r.rspr,r.x,r.y)
 end
 
 function update_all_rainpower()

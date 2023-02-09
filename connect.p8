@@ -23,6 +23,12 @@ function collisionliner.new()
         elseif btn(➡️) then
             collliner.x+=collliner.speed
         end
+        
+        if btn(⬆️) then
+            collliner.y-=collliner.speed
+        elseif btn(⬇️) then
+            collliner.y+=collliner.speed
+        end
     end
 
     function collliner.draw()
@@ -59,6 +65,21 @@ function collisionliner.new()
 
         collliner.coll_color = 7
         collliner.is_hit = false
+        return false
+    end
+
+    function collliner.kill_rocket(rck)
+        if collliner.x + 8 > rck.x and collliner.x < rck.x + 8 and
+           collliner.y + 8 > rck.y and collliner.y < rck.y + 8 then
+
+            collliner.coll_color = 8
+            collliner.speed+=0.05
+            collliner.radius = 10
+            collliner.is_hit = true
+
+            return true
+        end
+        
         return false
     end
 

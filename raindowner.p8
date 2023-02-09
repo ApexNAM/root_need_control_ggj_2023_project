@@ -15,7 +15,6 @@ function addraindowner()
             y = 0, 
             rspr = 69,
             speed = rain_downer_speed[rain_downer_speed_index],
-            setactive = false,
             objtag = "downer"
         }
     )
@@ -28,33 +27,23 @@ function addraindowner_x(setx)
             y = 0, 
             rspr = 69,
             speed = rain_downer_speed[rain_downer_speed_index],
-            setactive = false,
             objtag = "downer"
         }
     )
 end
 
 function update_raindowner(r)
-    for r in all(rain_downer) do
+    r.y+=r.speed
 
-        rain_downer[rnd(all(rain_downer)) + 1].setactive = true
+    if r.y >= 65 then
 
-        if r.setactive then
-            r.y+=r.speed
-
-            if r.y >= 65 then
-
-                rain_downer_speed_index=flr(rnd(5)) + 1
-                del(rain_downer,r)
-            end
-        end
-    end 
+        rain_downer_speed_index=flr(rnd(5)) + 1
+        del(rain_downer,r)
+    end
 end
 
 function draw_raindowner(r)
-    if r.setactive then
-        spr(r.rspr,r.x,r.y)
-    end
+    spr(r.rspr,r.x,r.y)
 end
 
 function update_all_raindowner()

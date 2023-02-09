@@ -19,7 +19,8 @@ function rootobject.new()
         cooltime = 1,
         delaytimed = false,
         delaytime = 5,
-        speed = 0.05
+        speed = 0.05,
+        rh = {8,16,32,64,128}
     }
 
     function root.update(player)
@@ -62,6 +63,15 @@ function rootobject.new()
                 root.ispowerup = true
             end 
         end
+    end
+
+    function root.hit_rocket(player, target)
+        if target.x + 8 > player.x and target.x < player.x + 8 and 
+           target.y + 8 > player.y and target.y < player.y + root.rh[root.ridx] then
+            return true
+        end
+
+        return false
     end
 
     function root.draw(player)
