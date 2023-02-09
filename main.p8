@@ -206,7 +206,7 @@ function _draw()
         
         print("global game jam 2023", 23,103,3)
         print("skagogames. made in skago.",13,110,3)
-        print("rnc_01",100,2,1)
+        print("rnc_02",100,2,1)
 
     elseif gamestates == "ingame" then
 
