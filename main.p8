@@ -56,7 +56,7 @@ end
 function _update60()
     if gamestates == "mainmenu" then
         
-        if btnp(?) then
+        if btnp(❎) then
             
             gamestates = "ready"
         end
@@ -73,7 +73,7 @@ function _update60()
 
         rocket_all_update()
 
-        if btnp(?) then
+        if btnp(❎) then
             if connect.targetcoll(player,0) then
                 root.killroot(player)
                 root.speed+=0.05
@@ -91,12 +91,12 @@ function _update60()
             end
         end
 
-        if btn(??) and btn(??) then
+        if btn(🅾️) and btn(⬅️) then
             if connect.targetcoll_not_addspeed(player) and player.x > 0 then
                 player.isright = false
                 player.x-=5
             end
-        elseif btn(??) and btn(??) then
+        elseif btn(🅾️) and btn(➡️) then
             if connect.targetcoll_not_addspeed(player) and player.x < 127 then
                 player.isright = true
                 player.x+=5
@@ -170,7 +170,7 @@ function _update60()
 
     elseif gamestates == "gameover" then
 
-        if btnp(?) then
+        if btnp(❎) then
             extcmd('reset')
         end
     elseif gamestates == "intro" then
@@ -202,7 +202,7 @@ function _draw()
         print("need",55, 46,7)
         print("control.",55, 52,7)
 
-        print("press ? to start!",27, 75,7)
+        print("press ❎ to start!",27, 75,7)
         
         print("global game jam 2023", 23,103,3)
         print("skagogames. made in skago.",13,110,3)
@@ -239,7 +239,7 @@ function _draw()
         print("scores:"..all_score_result,45,70,7)
 
         print("thank you for playing!!",23,88,rnd(8))
-        print("press ? to restart!",27, 95,7)
+        print("press ❎ to restart!",27, 95,7)
 
         print("global game jam 2023", 25,109,3)
         print("skagogames. made in skago.",15,115,3)
@@ -251,8 +251,8 @@ function _draw()
         print("get ready! controller!",20, 30, rnd(16))
         print("player life : ".._life,34,42,8)
 
-        print("??+????: moveright rootman",12,60,10)
-        print("?: downgrade root",12,67,10)
+        print("🅾️+⬅️➡️: moveright rootman",12,60,10)
+        print("❎: downgrade root",12,67,10)
 
         print("daejeon is u :)", 34, 90, 11)
     end
