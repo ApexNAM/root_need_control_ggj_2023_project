@@ -8,9 +8,9 @@ function add_rocket(sd)
     add(rocket,
         {
             x = 0,
-            y = 70 + rnd(85),
+            y = rnd({72,74,76,82,84,86,92}),
             rocket_spr = -1,
-            speed = rnd(0.1) + 0.05,
+            speed = rnd(0.1) + 0.05, 
             direction = sd,
             objtag = "rocket"
         }

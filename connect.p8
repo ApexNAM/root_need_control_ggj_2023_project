@@ -54,9 +54,11 @@ function collisionliner.new()
 
     end
 
-    function collliner.targetcoll(player)
-        if collliner.x + 8 > player.x and collliner.x < player.x + 8 then
-            collliner.coll_color = 0
+    function collliner.targetcoll(player, color)
+        if collliner.x + 8 > player.x and collliner.x < player.x + 8 and
+           collliner.y + 8 > player.y and collliner.y < player.y + 8 then
+
+            collliner.coll_color = color
             collliner.speed+=0.05
             collliner.radius = 10
             collliner.is_hit = true
@@ -65,21 +67,6 @@ function collisionliner.new()
 
         collliner.coll_color = 7
         collliner.is_hit = false
-        return false
-    end
-
-    function collliner.kill_rocket(rck)
-        if collliner.x + 8 > rck.x and collliner.x < rck.x + 8 and
-           collliner.y + 8 > rck.y and collliner.y < rck.y + 8 then
-
-            collliner.coll_color = 8
-            collliner.speed+=0.05
-            collliner.radius = 10
-            collliner.is_hit = true
-
-            return true
-        end
-        
         return false
     end
 
